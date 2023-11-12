@@ -1,1 +1,1 @@
-# __[rsschool-cv](https://Gromov-Roman.github.io/rsschool-cv/cv)__
+# __[rsschool-cv](https://Gromov-Roman.github.io/rsschool-cv/)__
