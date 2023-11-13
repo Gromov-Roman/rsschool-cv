@@ -123,7 +123,7 @@ const qsInsertionSort = (arr, left, right) =&gt; {
     for (let i = left + 1; i &lt; right; i++) {
         let sorted = i - 1;
 
-        while (sorted &gt;= 0 && arr[sorted] &gt; arr[sorted + 1]) {
+        while (sorted &gt;= 0 &amp;&amp; arr[sorted] &gt; arr[sorted + 1]) {
             swap(arr, sorted, sorted + 1);
             sorted--;
         }
