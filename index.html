@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Roman Gromov's CV</title>
+        <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/panda-syntax-dark.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <section>
+                <div class="hamburger">
+                    <span></span>
+                </div>
+                <img alt="small-portrait" src="assets/images/me.jpeg">
+                <h1>Roman Gromov</h1>
+            </section>
+
+            <p><q>Get busy living or get busy dying</q> - Stephen King</p>
+        </header>
+
+        <main>
+            <aside>
+                <img alt="portrait" src="assets/images/me.jpeg">
+                <article>
+                    <nav>
+                        <ul>
+                            <li><a href="#contacts">Contacts</a></li>
+                            <li><a href="#about">About Me</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#code">Code Example</a></li>
+                            <li><a href="#experience">Experience</a></li>
+                            <li><a href="#education">Education</a></li>
+                            <li><a href="#english">English</a></li>
+                        </ul>
+                    </nav>
+                </article>
+            </aside>
+
+            <article>
+                <section id="contacts">
+                    <h2><strong>Contacts</strong></h2>
+                    <article>
+                        <ul>
+                            <li>
+                                <strong>Location:</strong>
+                                <span>Tashkent, Uzbekistan</span>
+                            </li>
+                            <li>
+                                <strong>Email:</strong>
+                                <span>gromov.r.v.92@gmail.com</span>
+                            </li>
+                            <li>
+                                <strong>LinkedIn:</strong>
+                                <a href="https://www.linkedin.com/in/r-gromov/">Roman Gromov</a>
+                            </li>
+                            <li>
+                                <strong>GitHub:</strong>
+                                <a href="https://github.com/Gromov-Roman">Roman Gromov</a>
+                            </li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section id="about">
+                    <h2><strong>About Me</strong></h2>
+                    <article>
+                        <p> I am a dedicated and results-driven IT professional with a Specialist degree in IT software
+                            and
+                            computerized systems from Ivanovo State Power Engineering University. With a solid
+                            educational
+                            background, I have been working as a Frontend Developer since 2016, specializing in the
+                            Angular
+                            framework.</p>
+                        <p> Professional Background:
+                            In my role as a Frontend Developer, I have honed my skills in delving deep into tasks and
+                            crafting efficient solutions. I prioritize business goals and tasks, paying meticulous
+                            attention
+                            to detail and user experience. I have an ability to write simple yet effective code.</p>
+                        <h3><strong>Key Skills</strong>:</h3>
+                        <p> In-depth problem-solving skills
+                            Efficient and clean code writing
+                            Business-oriented task prioritization
+                            Keen attention to detail and user experience (UX/UI)</p>
+                        <h3><strong>Personal Qualities</strong>:</h3>
+                        <p> My professional journey is marked by qualities such as determination, consistency, and
+                            effectiveness. I excel in establishing effective communication with diverse teams, fostering
+                            a
+                            collaborative working environment.</p>
+                        <h3><strong>Achievements</strong>:</h3>
+                        <p> A notable accomplishment in my career includes a threefold improvement in page loading
+                            speed.
+                            This achievement was realized through my analysis of the project build and the
+                            implementation of
+                            custom solutions, replacing heavy libraries.</p>
+                        <p> I am enthusiastic about contributing my skills and expertise to dynamic projects,
+                            consistently
+                            striving for excellence in every task. My goal is to continue making impactful contributions
+                            to
+                            the field of IT development.</p>
+                    </article>
+                </section>
+
+                <section id="skills">
+                    <h2><strong>Skills</strong></h2>
+                    <article>
+                        <ul>
+                            <li>JS, TS</li>
+                            <li>HTML, CSS/SASS</li>
+                            <li>Angular</li>
+                            <li>Git, Webpack, npm</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section id="code">
+                    <h2><strong>Code Example</strong></h2>
+                    <article>
+                        <details>
+                            <summary>Free and simplified interpretation of V8 sorting</summary>
+                            <pre><code class="javascript">
+const qsInsertionSort = (arr, left, right) => {
+    for (let i = left + 1; i < right; i++) {
+        let sorted = i - 1;
+
+        while (sorted >= 0 && arr[sorted] > arr[sorted + 1]) {
+            swap(arr, sorted, sorted + 1);
+            sorted--;
+        }
+    }
+
+    return arr;
+};
+
+const qsPartition = (arr, left, right) => {
+    let first = left;
+    let middle = left + ((right - left) >> 1);
+    let last = right;
+
+    if (arr[first] > arr[last]) swap(arr, first, last);
+    if (arr[middle] > arr[first]) swap(arr, first, middle);
+    else if (arr[middle] > arr[last]) swap(arr, middle, last);
+
+    let pivot = arr[middle];
+
+    while (left <= right) {
+        while (arr[left] < pivot) left++;
+        while (arr[right] > pivot) right--;
+
+        if (left <= right) {
+            swap(arr, left, right);
+
+            left++;
+            right--;
+        }
+    }
+    return left;
+};
+
+const quickSort = (arr, start = 0, end = arr.length - 1) => {
+    while (true) {
+        if (start >= end) return;
+
+        if (arr.length <= 10) {
+            return qsInsertionSort(arr, start, end);
+        }
+
+        const rightStart = qsPartition(arr, start, end);
+
+        if (rightStart - 1 - start < end - rightStart) {
+            quickSort(arr, start, rightStart - 1);
+            start = rightStart;
+        } else {
+            quickSort(arr, rightStart, end);
+            end = rightStart - 1;
+        }
+    }
+};
+                        </code></pre>
+                        </details>
+                    </article>
+                </section>
+
+                <section id="experience">
+                    <h2><strong>Experience</strong></h2>
+                    <article>
+                        <p>In frontend since 2016</p>
+                    </article>
+                </section>
+
+                <section id="education">
+                    <h2><strong>Education</strong></h2>
+                    <article>
+                        <p>Ivanovo State Power Engineering UniversityIvanovo State Power Engineering University
+                            Specialist degree, IT software and computerized systems</p>
+                    </article>
+                </section>
+
+                <section id="english">
+                    <h2><strong>English</strong></h2>
+                    <article>
+                        <p>A2-B1</p>
+                    </article>
+                </section>
+            </article>
+        </main>
+
+        <footer>
+            <div>
+                © 2023 <a href="https://github.com/Gromov-Roman" target="_blank" class="nav-link">Roman Gromov</a>
+            </div>
+        </footer>
+    </body>
+
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        const aside = document.querySelector('aside');
+        const hamburger = document.querySelector('.hamburger');
+
+        function toggleMenu() {
+            if (hamburger.classList.contains('opened')) {
+                hamburger.classList.remove('opened');
+                aside.style.visibility = 'hidden';
+            } else {
+                hamburger.classList.add('opened');
+                aside.style.visibility = 'visible';
+            }
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+
+        window.addEventListener('resize', () => {
+            if (document.body.clientWidth > 768 && aside.style.visibility === 'hidden') {
+                aside.style.visibility = 'visible';
+            }
+        });
+    </script>
+</html>
