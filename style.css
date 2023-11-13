@@ -31,6 +31,50 @@ header section {
     gap: 10px;
 }
 
+header .hamburger {
+    display: none;
+    cursor: pointer;
+    height: 27px;
+    width: 27px;
+    margin-right: 20px;
+    overflow: visible;
+    position: relative;
+}
+
+header .hamburger span,
+header .hamburger span:before,
+header .hamburger span:after {
+    background: #fff;
+    display: block;
+    height: 2px;
+    opacity: 1;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+}
+
+header .hamburger span:before,
+header .hamburger span:after {
+    content: '';
+}
+
+header .hamburger span:before {
+    left: 0;
+    top: -10px;
+    width: 27px;
+}
+
+header .hamburger span {
+    right: 0;
+    top: 13px;
+    width: 27px;
+}
+
+header .hamburger span:after {
+    left: 0;
+    top: 10px;
+    width: 27px;
+}
+
 header img {
     height: 40px;
     width: 40px;
@@ -51,6 +95,7 @@ main {
 aside {
     display: flex;
     flex-direction: column;
+    min-width: 200px;
     width: 30%;
     padding: 10px 20px;
 }
@@ -72,6 +117,7 @@ aside ul li a {
     padding: 10px;
     background-color: #808080;
     border-radius: 10px;
+    min-width: 170px;
     width: 50%;
 }
 
@@ -132,4 +178,18 @@ footer {
     display: flex;
     padding: 10px 20px;
     background-color: lightgray;
+}
+
+@media (max-width: 768px) {
+    header .hamburger {
+        display: block;
+    }
+
+    aside {
+        position: absolute;
+        align-items: center;
+        visibility: hidden;
+        background-color: rgba(237, 231, 225, .8);
+        border-radius: 10px;
+    }
 }

@@ -13,12 +13,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     </head>
     <body>
-        <script>
-            hljs.highlightAll();
-        </script>
-
         <header>
             <section>
+                <div class="hamburger">
+                    <span></span>
+                </div>
                 <img alt="small-portrait" src="assets/images/me.jpeg">
                 <h1>Roman Gromov</h1>
             </section>
@@ -218,4 +217,31 @@ const quickSort = (arr, start = 0, end = arr.length - 1) => {
             </div>
         </footer>
     </body>
+
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        const aside = document.querySelector('aside');
+        const hamburger = document.querySelector('.hamburger');
+
+        function toggleMenu() {
+            if (hamburger.classList.contains('opened')) {
+                hamburger.classList.remove('opened');
+                aside.style.visibility = 'hidden';
+            } else {
+                hamburger.classList.add('opened');
+                aside.style.visibility = 'visible';
+            }
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+
+        window.addEventListener('resize', () => {
+            if (document.body.clientWidth > 768 && aside.style.visibility === 'hidden') {
+                aside.style.visibility = 'visible';
+            }
+        });
+    </script>
 </html>
