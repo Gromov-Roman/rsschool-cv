@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Roman Gromov's CV</title>
         <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
@@ -24,25 +24,23 @@
         <main>
             <aside>
                 <img alt="portrait" src="assets/images/me.jpeg">
-                <article>
-                    <nav>
-                        <ul>
-                            <li><a href="#contacts">Contacts</a></li>
-                            <li><a href="#about">About Me</a></li>
-                            <li><a href="#skills">Skills</a></li>
-                            <li><a href="#code">Code Example</a></li>
-                            <li><a href="#experience">Experience</a></li>
-                            <li><a href="#education">Education</a></li>
-                            <li><a href="#english">English</a></li>
-                        </ul>
-                    </nav>
-                </article>
+                <nav>
+                    <ul>
+                        <li><a href="#contacts">Contacts</a></li>
+                        <li><a href="#about">About Me</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#code">Code Example</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#english">English</a></li>
+                    </ul>
+                </nav>
             </aside>
 
-            <article>
+            <div class="content">
                 <section id="contacts">
                     <h2><strong>Contacts</strong></h2>
-                    <article>
+                    <div class="section-content">
                         <ul>
                             <li>
                                 <strong>Location:</strong>
@@ -61,12 +59,12 @@
                                 <a href="https://github.com/Gromov-Roman">Roman Gromov</a>
                             </li>
                         </ul>
-                    </article>
+                    </div>
                 </section>
 
                 <section id="about">
                     <h2><strong>About Me</strong></h2>
-                    <article>
+                    <div class="section-content">
                         <p> I am a dedicated and results-driven IT professional with a Specialist degree in IT software
                             and
                             computerized systems from Ivanovo State Power Engineering University. With a solid
@@ -100,29 +98,29 @@
                             striving for excellence in every task. My goal is to continue making impactful contributions
                             to
                             the field of IT development.</p>
-                    </article>
+                    </div>
                 </section>
 
                 <section id="skills">
                     <h2><strong>Skills</strong></h2>
-                    <article>
+                    <div class="section-content">
                         <ul>
                             <li>JS, TS</li>
                             <li>HTML, CSS/SASS</li>
                             <li>Angular</li>
                             <li>Git, Webpack, npm</li>
                         </ul>
-                    </article>
+                    </div>
                 </section>
 
                 <section id="code">
                     <h2><strong>Code Example</strong></h2>
-                    <article>
+                    <div class="section-content">
                         <details>
                             <summary>Free and simplified interpretation of V8 sorting</summary>
                             <pre><code class="javascript">
 const qsInsertionSort = (arr, left, right) => {
-    for (let i = left + 1; i < right; i++) {
+    for (let i = left + 1; i &lt; right; i++) {
         let sorted = i - 1;
 
         while (sorted >= 0 && arr[sorted] > arr[sorted + 1]) {
@@ -145,11 +143,11 @@ const qsPartition = (arr, left, right) => {
 
     let pivot = arr[middle];
 
-    while (left <= right) {
-        while (arr[left] < pivot) left++;
+    while (left &lt;= right) {
+        while (arr[left] &lt; pivot) left++;
         while (arr[right] > pivot) right--;
 
-        if (left <= right) {
+        if (left &lt;= right) {
             swap(arr, left, right);
 
             left++;
@@ -163,13 +161,13 @@ const quickSort = (arr, start = 0, end = arr.length - 1) => {
     while (true) {
         if (start >= end) return;
 
-        if (arr.length <= 10) {
+        if (arr.length &lt;= 10) {
             return qsInsertionSort(arr, start, end);
         }
 
         const rightStart = qsPartition(arr, start, end);
 
-        if (rightStart - 1 - start < end - rightStart) {
+        if (rightStart - 1 - start &lt; end - rightStart) {
             quickSort(arr, start, rightStart - 1);
             start = rightStart;
         } else {
@@ -180,31 +178,31 @@ const quickSort = (arr, start = 0, end = arr.length - 1) => {
 };
                         </code></pre>
                         </details>
-                    </article>
+                    </div>
                 </section>
 
                 <section id="experience">
                     <h2><strong>Experience</strong></h2>
-                    <article>
+                    <div class="section-content">
                         <p>In frontend since 2016</p>
-                    </article>
+                    </div>
                 </section>
 
                 <section id="education">
                     <h2><strong>Education</strong></h2>
-                    <article>
+                    <div class="section-content">
                         <p>Ivanovo State Power Engineering UniversityIvanovo State Power Engineering University
                             Specialist degree, IT software and computerized systems</p>
-                    </article>
+                    </div>
                 </section>
 
                 <section id="english">
                     <h2><strong>English</strong></h2>
-                    <article>
+                    <div class="section-content">
                         <p>A2-B1</p>
-                    </article>
+                    </div>
                 </section>
-            </article>
+            </div>
         </main>
 
         <footer>
@@ -212,32 +210,7 @@ const quickSort = (arr, start = 0, end = arr.length - 1) => {
                 © 2023 <a href="https://github.com/Gromov-Roman" target="_blank" class="nav-link">Roman Gromov</a>
             </div>
         </footer>
+
+        <script src="script.js"></script>
     </body>
-
-    <script>
-        hljs.highlightAll();
-    </script>
-
-    <script>
-        const aside = document.querySelector('aside');
-        const hamburger = document.querySelector('.hamburger');
-
-        function toggleMenu() {
-            if (hamburger.classList.contains('opened')) {
-                hamburger.classList.remove('opened');
-                aside.style.visibility = 'hidden';
-            } else {
-                hamburger.classList.add('opened');
-                aside.style.visibility = 'visible';
-            }
-        }
-
-        hamburger.addEventListener('click', toggleMenu);
-
-        window.addEventListener('resize', () => {
-            if (document.body.clientWidth > 768 && aside.style.visibility === 'hidden') {
-                aside.style.visibility = 'visible';
-            }
-        });
-    </script>
 </html>

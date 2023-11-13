@@ -127,7 +127,7 @@ aside img {
     border-radius: 20px;
 }
 
-main > article {
+main > .content {
     flex: 1;
     overflow: auto;
     font-size: large;
@@ -137,12 +137,12 @@ main > article {
     gap: 15px;
 }
 
-main article section {
+main .content section {
     background-color: darkslategray;
     border-radius: 10px;
 }
 
-main article section h2 {
+main .content section h2 {
     background-color: aliceblue;
     color: dimgray;
     border-radius: 10px;
@@ -150,17 +150,17 @@ main article section h2 {
     margin: 0;
 }
 
-main article section article {
+main .content section .section-content {
     padding: 0 20px;
 }
 
-main article section article ul {
+main .content section .section-content ul {
     padding: 0;
     margin: 20px;
     list-style-type: circle;
 }
 
-main article section article ul li a {
+main .content section .section-content ul li a {
     color: lightgray;
     text-decoration: none;
     font-weight: bold;
