@@ -119,11 +119,11 @@
                         <details>
                             <summary>Free and simplified interpretation of V8 sorting</summary>
                             <pre><code class="javascript">
-const qsInsertionSort = (arr, left, right) => {
+const qsInsertionSort = (arr, left, right) =&gt; {
     for (let i = left + 1; i &lt; right; i++) {
         let sorted = i - 1;
 
-        while (sorted >= 0 && arr[sorted] > arr[sorted + 1]) {
+        while (sorted &gt;= 0 && arr[sorted] &gt; arr[sorted + 1]) {
             swap(arr, sorted, sorted + 1);
             sorted--;
         }
@@ -132,20 +132,20 @@ const qsInsertionSort = (arr, left, right) => {
     return arr;
 };
 
-const qsPartition = (arr, left, right) => {
+const qsPartition = (arr, left, right) =&gt; {
     let first = left;
-    let middle = left + ((right - left) >> 1);
+    let middle = left + ((right - left) &gt;&gt; 1);
     let last = right;
 
-    if (arr[first] > arr[last]) swap(arr, first, last);
-    if (arr[middle] > arr[first]) swap(arr, first, middle);
-    else if (arr[middle] > arr[last]) swap(arr, middle, last);
+    if (arr[first] &gt; arr[last]) swap(arr, first, last);
+    if (arr[middle] &gt; arr[first]) swap(arr, first, middle);
+    else if (arr[middle] &gt; arr[last]) swap(arr, middle, last);
 
     let pivot = arr[middle];
 
     while (left &lt;= right) {
         while (arr[left] &lt; pivot) left++;
-        while (arr[right] > pivot) right--;
+        while (arr[right] &gt; pivot) right--;
 
         if (left &lt;= right) {
             swap(arr, left, right);
@@ -157,9 +157,9 @@ const qsPartition = (arr, left, right) => {
     return left;
 };
 
-const quickSort = (arr, start = 0, end = arr.length - 1) => {
+const quickSort = (arr, start = 0, end = arr.length - 1) =&gt; {
     while (true) {
-        if (start >= end) return;
+        if (start &gt;= end) return;
 
         if (arr.length &lt;= 10) {
             return qsInsertionSort(arr, start, end);
