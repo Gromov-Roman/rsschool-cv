@@ -1,0 +1,135 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0;
+    background: rgb(8, 0, 36);
+    background: linear-gradient(180deg, rgba(8, 0, 36, 1) 0%, rgba(148, 109, 194, 1) 39%, rgba(0, 212, 255, 1) 100%);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: antiquewhite;
+}
+
+header section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    height: calc(100% - 140px);
+    display: flex;
+    flex: 1;
+    color: bisque;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 10px 20px;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside ul li {
+    font-size: larger;
+    padding: 3px 0;
+}
+
+aside ul li a {
+    display: block;
+    color: blanchedalmond;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #808080;
+    border-radius: 10px;
+    width: 50%;
+}
+
+aside img {
+    height: auto;
+    width: 100%;
+    border-radius: 20px;
+}
+
+main > article {
+    flex: 1;
+    overflow: auto;
+    font-size: large;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+main article section {
+    background-color: darkslategray;
+    border-radius: 10px;
+}
+
+main article section h2 {
+    background-color: aliceblue;
+    color: dimgray;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0;
+}
+
+main article section article {
+    padding: 0 20px;
+}
+
+main article section article ul {
+    padding: 0;
+    margin: 20px;
+    list-style-type: circle;
+}
+
+main article section article ul li a {
+    color: lightgray;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+details {
+    margin: 20px 0;
+}
+
+code {
+    border-radius: 10px;
+}
+
+footer {
+    display: flex;
+    padding: 10px 20px;
+    background-color: lightgray;
+}
